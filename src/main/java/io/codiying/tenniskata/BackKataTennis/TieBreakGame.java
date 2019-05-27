@@ -20,7 +20,9 @@ public class TieBreakGame extends ScoreGame {
         if((player1Score >=7 || player2Score >=7 )&& Math.abs(player1Score - player1Score) >= 2){
             return "Tie Break Winner + " + getLeadPlayer();
         }
-        else return "Tie Break game : Player1 " + player1Score + " - " + player2Score + " Player2";
+        else {
+            return "Tie Break game : Player1 " + player1Score + " - " + player2Score + " Player2";
+        }
     }
 
     public String getResultOfActualGame(){

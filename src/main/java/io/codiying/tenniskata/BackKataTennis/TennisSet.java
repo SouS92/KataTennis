@@ -58,22 +58,29 @@ public class TennisSet {
 
     public String getResult(){
 
-        if(this.player2GamesWon >= 6 || this.player1GamesWon >= 6)
+        if(this.player2GamesWon >= 6 || this.player1GamesWon >= 6){
             if(Math.abs(player1GamesWon - player2GamesWon) >=1)
                 return "Set won by " + getLeaderSet();
             else
                 return actualGame.getResult();
+        }
 
-        else return "Player1 : " + this.player1GamesWon + " - " + this.player2GamesWon + " : Player2 / Actual game : "+ actualGame.getResult();
+        else {
+            return "Player1 : " + this.player1GamesWon + " - " + this.player2GamesWon + " : Player2 / Actual game : "+ actualGame.getResult();
+        }
     }
 
     public String getLeaderSet(){
-        if(this.player1GamesWon > this.player2GamesWon) return "player1";
+        if(this.player1GamesWon > this.player2GamesWon) {
+            return "player1";
+        }
         return "player2";
     }
 
     public boolean isTieBreakGame(){
-        if(actualGame instanceof TieBreakGame) return true;
+        if(actualGame instanceof TieBreakGame) {
+            return true;
+        }
         return false;
     }
     public String getResultOfActualGame(){
@@ -88,7 +95,8 @@ public class TennisSet {
     }
 
     public void displayGames(){
-        for (ScoreGame game : games)
+        for (ScoreGame game : games){
             System.out.println(game.getResult());
+        }
     }
 }

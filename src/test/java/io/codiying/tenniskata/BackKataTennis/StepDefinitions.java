@@ -116,11 +116,10 @@ public class StepDefinitions {
     public void player_scores_point_and_player_scores_points(int pointsScoredByPlayer2, int pointsScoredByPlayer1) throws Throwable {
         for(int i = 0 ; i<pointsScoredByPlayer2;i++) set.player2ScorePoint();
         for(int i = 0 ; i<pointsScoredByPlayer1;i++) set.player1ScorePoint();
-        }
+    }
 
     @Then("^: player(\\d+) win the set$")
     public void player_win_the_set(int arg1) throws Throwable {
         assertEquals("Set won by player1", set.getResult());
-        set.displayGames();
     }
 }
